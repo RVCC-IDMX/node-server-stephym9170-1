@@ -1,6 +1,10 @@
-import {addNums} from "./addNums.js";
+const http = require("http");
 
-const addNums = require("./addNums")
+const PORT = process.env.PORT || 3000;
 
-const sum = addNums(2, 2)
-console.log(sum);
+ const server = http.createServer((req, res) => {
+    response.statusCode = 200;
+    response.setHeader("Content-Type", "text/html");
+    response.end('<h1>Hello World<h1>');
+})
+server.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
